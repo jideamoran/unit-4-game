@@ -3,8 +3,11 @@
     var wins = 0;
     var losses = 0;
     var previous = 0;
+    var Crystal1
+    var crystal2
+    var crystal3
+    var crystal4
     
-    crystals = ["crystal1", "crystal2", "crystal3", "crystal4"]
     
     
 
@@ -13,21 +16,23 @@
 
 // Crystal1
 
-function resetAndStart()( {
+reset(crystal1) () {
 
-    $("crystal1").empty("Crystal 1");
+    $("#crystal1").empty("Crystal 1");
 
     randomresult = Math.floor(Math.random() * 120) + 19;
 
     $("result").html('Random Result: ' + randomresult);
 
-    for(crystal1 i=0; i<4; i++) { 
+}
+
+reset (crystal1 i=0; i<4; i++) { 
 
         var randomnumber = Math.floor(Math.random() * 11) + 1;   
         
         console.log(randomnumber)
         
-        var crystal = $("<div>");
+        var crystal = $();
 
         crystal.attr({ "class": 'crystal1',
 
@@ -36,88 +41,15 @@ function resetAndStart()( {
 
 }
 
+resetAndStart();
 
-// Crystal2
-
-function resetAndStart() {
-
-     $("crystal2").empty("Crystal 2");
- 
-     randomresult = Math.floor(Math.random() * 120) + 19;
- 
-     $("result").html('Random Result: ' + randomresult);
- 
-     for(crystal2 i=0; i<4; i++) { 
- 
-         var randomnumber = Math.floor(Math.random() * 11) + 1;   
-         console.log(randomnumber)
-         
-         var crystal = $("<div>");
- 
-         crystal.attr({ "class": 'crystal1',
- 
-         "data-random": randomnumber
-     });
- 
- }
-
-//  Crystal3
-
-function resetAndStart() {
-
-     $("crystal3").empty("Crystal 3");
- 
-     randomresult = Math.floor(Math.random() * 120) + 19;
- 
-     $("result").html('Random Result: ' + randomresult);
- 
-     for(crystal3 i=0; i<4; i++) { 
- 
-         var randomnumber = Math.floor(Math.random() * 11) + 1;   
-         console.log(randomnumber)
-         
-         var crystal = $("<div>");
- 
-         crystal.attr({ "class": 'crystal1',
- 
-         "data-random": randomnumber
-     });
- 
- }
-
-//  Crystal4
-
-function resetAndStart() () {
-
-     $("crystal4").empty("Crystal 4");
- 
-     randomresult = Math.floor(Math.random() * 120) + 19;
- 
-     $("result").html('Random Result: ' + randomresult);
- 
-     for(crystal4 i=0; i<4; i++) { 
- 
-         var randomnumber = Math.floor(Math.random() * 11) + 1;   
-         console.log(randomnumber)
-         
-         var crystal = $("<div>");
- 
-         crystal.attr({ "class": 'crystal1',
- 
-         "data-random": randomnumber
-     });
- 
- }
-
-/////////////////////////////////////////////////////////
-
-// resetAndStart();
-
-    $("#crystal1").on('click', function () {
+    $("#crystal1").click(function () {
 
         var num = parseInt($(this).attr('data-random'));
 
         previous += num;
+
+    
 
 $("#previous").html("Total Score: " +  previous);
        
@@ -132,9 +64,7 @@ $("#previous").html("Total Score: " +  previous);
 
             previous = 0;
 
-           
-
-          //   resetAndStart();
+            reset();
            
         }
         else if(previous === randomresult){
@@ -145,18 +75,21 @@ $("#previous").html("Total Score: " +  previous);
 
             previous = 0;
 
-          //   resetAndStart();
+            reset();
             
         }
 
     });
 
+    reset();
 
-    $("#crystal2").on('click', function () {
+    $("#crystal1").click(function () {
 
         var num = parseInt($(this).attr('data-random'));
 
         previous += num;
+
+    
 
 $("#previous").html("Total Score: " +  previous);
        
@@ -167,22 +100,22 @@ $("#previous").html("Total Score: " +  previous);
         if(previous > randomresult){
             losses++;
 
-            $("#losses").html("Lose: " + losses);
+            $(".losses").html (Lose, " "  + losses);
 
             previous = 0;
 
-          //   resetAndStart();
+            reset();
            
         }
         else if(previous === randomresult){
 
             win++;
 
-            $("#win").html("Win: " + win);
+            $(".win").html (Win, " "  + win);
 
             previous = 0;
 
-          //   resetAndStart();
+            reset();
             
         }
 
