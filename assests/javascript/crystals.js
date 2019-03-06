@@ -1,63 +1,189 @@
-    var crystal1
-    var crystal2
-    var crystal3
-    var crystal4
-    var totalscore = 0
+
+    var randomresult;
+    var wins = 0;
+    var losses = 0;
+    var previous = 0;
     
-   
+    crystals = ["crystal1", "crystal2", "crystal3", "crystal4"]
+    
+    
+
+// reset and start function to begin game on page load
 
 
+// Crystal1
 
-     var crystalNumber = Math.floor(Math.random() * 12 - 1+ 1
+function resetAndStart()( {
 
-  $("#crystal").text(number);
+    $("crystal1").empty("Crystal 1");
 
-  console.log(crystalNumber)
+    randomresult = Math.floor(Math.random() * 120) + 19;
 
-        (function(){ randomnumber Math.floor(Math.random() * 12 -1 + 1) + min);
+    $("result").html('Random Result: ' + randomresult);
 
-            (function(){ crystalNumber return Math.floor(Math.random() * 12 -1 + 1) + min);
-s
-               (function(){ crystalNumber return Math.floor(Math.random() * 12 -1 + 1) + min);
+    for(crystal1 i=0; i<4; i++) { 
 
+        var randomnumber = Math.floor(Math.random() * 11) + 1;   
+        
+        console.log(randomnumber)
+        
+        var crystal = $("<div>");
 
+        crystal.attr({ "class": 'crystal1',
 
-                $("#crystal1", "#crtystal2", "#crystal3", "#crystal4").onclick(function() 
-
-                    (min: 1, max: 12) {
-
-                        Math.floor(Math.random()* max - min + 1)+ min);
-                    }
-player .onclick
-
-    $("#crystalNumber").onclick.push (min: 19, max: 120) {
-
-         [Math.floor(Math.random() * max - min + 1) + min)];
+        "data-random": randomnumber
     });
 
-    $("#crystal1").onclick; crystal1 (min: 1, max: 12) {
+}
 
-         Math.floor(Math.random()* max - min + 1)+ min);
+
+// Crystal2
+
+function resetAndStart() {
+
+     $("crystal2").empty("Crystal 2");
+ 
+     randomresult = Math.floor(Math.random() * 120) + 19;
+ 
+     $("result").html('Random Result: ' + randomresult);
+ 
+     for(crystal2 i=0; i<4; i++) { 
+ 
+         var randomnumber = Math.floor(Math.random() * 11) + 1;   
+         console.log(randomnumber)
+         
+         var crystal = $("<div>");
+ 
+         crystal.attr({ "class": 'crystal1',
+ 
+         "data-random": randomnumber
+     });
+ 
+ }
+
+//  Crystal3
+
+function resetAndStart() {
+
+     $("crystal3").empty("Crystal 3");
+ 
+     randomresult = Math.floor(Math.random() * 120) + 19;
+ 
+     $("result").html('Random Result: ' + randomresult);
+ 
+     for(crystal3 i=0; i<4; i++) { 
+ 
+         var randomnumber = Math.floor(Math.random() * 11) + 1;   
+         console.log(randomnumber)
+         
+         var crystal = $("<div>");
+ 
+         crystal.attr({ "class": 'crystal1',
+ 
+         "data-random": randomnumber
+     });
+ 
+ }
+
+//  Crystal4
+
+function resetAndStart() () {
+
+     $("crystal4").empty("Crystal 4");
+ 
+     randomresult = Math.floor(Math.random() * 120) + 19;
+ 
+     $("result").html('Random Result: ' + randomresult);
+ 
+     for(crystal4 i=0; i<4; i++) { 
+ 
+         var randomnumber = Math.floor(Math.random() * 11) + 1;   
+         console.log(randomnumber)
+         
+         var crystal = $("<div>");
+ 
+         crystal.attr({ "class": 'crystal1',
+ 
+         "data-random": randomnumber
+     });
+ 
+ }
+
+/////////////////////////////////////////////////////////
+
+// resetAndStart();
+
+    $("#crystal1").on('click', function () {
+
+        var num = parseInt($(this).attr('data-random'));
+
+        previous += num;
+
+$("#previous").html("Total Score: " +  previous);
+       
+
+        console.log(previous);
+
+
+        if(previous > randomresult){
+            losses++;
+
+            $("#losses").html("Lose: " + losses);
+
+            previous = 0;
+
+           
+
+          //   resetAndStart();
+           
+        }
+        else if(previous === randomresult){
+
+            win++;
+
+            $("#win").html("Win: " + win);
+
+            previous = 0;
+
+          //   resetAndStart();
+            
+        }
+
     });
-    $("#crystal2").onclick.innerhtml crystal2(min: 1, max: 12) {
 
-         Math.floor(Math.random()* max - min + 1)+ min);
+
+    $("#crystal2").on('click', function () {
+
+        var num = parseInt($(this).attr('data-random'));
+
+        previous += num;
+
+$("#previous").html("Total Score: " +  previous);
+       
+
+        console.log(previous);
+
+
+        if(previous > randomresult){
+            losses++;
+
+            $("#losses").html("Lose: " + losses);
+
+            previous = 0;
+
+          //   resetAndStart();
+           
+        }
+        else if(previous === randomresult){
+
+            win++;
+
+            $("#win").html("Win: " + win);
+
+            previous = 0;
+
+          //   resetAndStart();
+            
+        }
+
     });
-    $("#crystal3").onclick  crystal3(min: 1, max: 12) {
-
-         Math.floor(Math.random()* max - min + 1)+ min);
-    });
-    $(("#crystal4").onclick crystal4.(min: 1, max: 12) {
-
-         Math.floor(Math.random()* max - min + 1)+ min);
-    });
-
-
-console.log
-
-
-
-   
-
-
-
